@@ -1,0 +1,20 @@
+{
+  "useConfigFiles": true,
+  "useTaobaoRegistry": true,
+  "packageManager": "yarn",
+  "latestVersion": "4.3.1",
+  "lastChecked": 1586768367095,
+  "cssPreprocessor": "scss",
+  "plugins": {
+    "@vue/cli-plugin-babel": {
+      "version": "^4.3.0"
+    },
+    "@vue/cli-plugin-eslint": {
+      "version": "^4.3.0",
+      "config": "prettier",
+      "lintOn": [
+        "save"
+      ]
+    }
+  }
+}
