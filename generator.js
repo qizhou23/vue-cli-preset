@@ -4,15 +4,15 @@ module.exports = (api, opts, rootOpts) => {
     renderFiles(api, opts)
 }
 
-function renderFiles (api, opts) {
+function renderFiles(api, opts) {
     const filesToDelete = [
         // 'postcss.config.js',
         // '_browserslistrc',
         // 'babel.config.js',
         // '.gitignore',
         '.eslintrc.js',
-        'public/favicon.ico',
-        'public/index.html',
+        // 'public/favicon.ico',
+        // 'public/index.html',
         'src/App.vue',
         'src/main.js',
         'src/assets/logo.png',
@@ -40,10 +40,13 @@ function renderFiles (api, opts) {
         './.env.production': './templates/_env.production',
         './.env.test': './templates/_env.test',
         './.browserslistrc': './templates/_browserslistrc',
+        './.prettierrc': './templates/_prettierrc',
+        './.stylelintrc.json': './templates/_stylelintrc.json',
+        './.stylelintignore': './templates/_stylelintignore',
     })
 }
 
-function addDependencies (api, opts) {
+function addDependencies(api, opts) {
     // 修改 `package.json` 中的字段
     api.extendPackage({
         "name": opts.name,
@@ -55,7 +58,9 @@ function addDependencies (api, opts) {
             "build:test": "vue-cli-service build --mode test",
             "build:pre": "vue-cli-service build --mode pre",
             "lint": "vue-cli-service lint",
-            "lint-fix": "eslint --fix --ext .js --ext .vue src/"
+            "lint-fix": "eslint --fix --ext .js --ext .vue src/",
+            "docs:dev": "vuepress dev docs",
+            "docs:build": "vuepress build docs"
         },
         "dependencies": {
             "axios": "^0.19.2",
@@ -70,14 +75,18 @@ function addDependencies (api, opts) {
             "@vue/cli-plugin-eslint": "^4.3.0",
             "@vue/cli-service": "^4.3.0",
             "@vue/eslint-config-prettier": "^6.0.0",
+            "amfe-flexible": "^2.2.1",
             "babel-eslint": "^10.1.0",
             "eslint": "^6.7.2",
             "eslint-plugin-prettier": "^3.1.1",
             "eslint-plugin-vue": "^6.2.2",
             "node-sass": "^4.12.0",
+            "postcss-px2rem-exclude": "^0.0.6",
             "prettier": "^1.19.1",
             "sass-loader": "^8.0.2",
-            "vue-template-compiler": "^2.6.11"
+            "stylelint": "^13.5.0",
+            "vue-template-compiler": "^2.6.11",
+            "vuepress": "^1.5.0"
         }
     })
 }

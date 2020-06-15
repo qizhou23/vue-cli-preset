@@ -1,0 +1,20 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-rational-order"],
+  "plugins": ["stylelint-scss", "stylelint-order"],
+  "rules": {
+    "no-descending-specificity": null,
+    "unit-case": null,
+    "max-nesting-depth": 3,
+    "at-rule-no-unknown": null,
+    "property-no-unknown": null,
+    "selector-pseudo-class-no-unknown": null,
+    "order/order": [
+      "custom-properties",
+      "dollar-variables",
+      "declarations",
+      "rules",
+      "at-rules"
+    ],
+    "semi": false
+  }
+}

@@ -1,5 +1,3 @@
 export default {
-    install: function (Vue) {
-
-    }
+  install: function(Vue) {}
 }
